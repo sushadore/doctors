@@ -19,7 +19,7 @@ describe Volunteer do
 
   describe '.all' do
     it 'returns an empty array' do
-      expect(Volunteer.new(:name => 'Sam Bob', :id=> nil).all).to eq([])
+      expect(Volunteer.all).to eq([])
     end
   end
 end
