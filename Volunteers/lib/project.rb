@@ -22,4 +22,9 @@ class Project
   def save
     @id = (DB.exec"INSERT INTO projects (title, description) VALUES ('#{@title}', '#{@description}') RETURNING id;").first['id'].to_i
   end
+
+  def update_title(attributes)
+    @title = attributes[:title]
+    DB.exec"UPDATE projects SET title = '#{@title}' WHERE id = #{self.id};"
+  end
 end
