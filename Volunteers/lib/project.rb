@@ -32,4 +32,8 @@ class Project
     @description = attributes[:description]
     DB.exec"UPDATE projects SET description = '#{@title}' WHERE id = #{self.id};"
   end
+
+  def delete
+    DB.exec"Delete FROM projects WHERE id = #{self.id};"
+  end
 end

@@ -1,6 +1,7 @@
 require 'rspec'
 require 'spec_helper'
 require 'project'
+require 'volunteer'
 require 'pg'
 
 describe Project do
@@ -60,6 +61,17 @@ describe Project do
       project.save
       project.update_description(:description => 'shoe the equines')
       expect(project.description).to eq('shoe the equines')
+    end
+  end
+
+  describe '#delete' do
+    it 'deletes a project from the database' do
+      project1 = Project.new(:title => 'Horses', :description => 'feed the equines', :id => nil)
+      project1.save
+      project2 = Project.new(:title => 'Dogs', :description => 'bathe the dogs', :id => nil)
+      project2.save
+      project1.delete
+      expect(Project.all).to eq([project2])
     end
   end
 end

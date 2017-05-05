@@ -1,9 +1,10 @@
 class Volunteer
-attr_accessor(:name, :project_id)
+attr_accessor(:name, :project_id, :id)
 
   def initialize(attributes)
     @name = attributes[:name]
     @project_id = attributes[:project_id]
+    @id = attributes[:id]
   end
 
   def Volunteer.all
@@ -19,6 +20,10 @@ attr_accessor(:name, :project_id)
   end
 
   def save
-    DB.exec"INSERT INTO volunteers (name, project_id) VALUES ('#{@name}', #{@project_id});"
+    @id = (DB.exec"INSERT INTO volunteers (name, project_id) VALUES ('#{@name}', '#{@project_id}') RETURNING id;").first['id'].to_i
+  end
+
+  def delete
+    DB.exec"DELETE FROM volunteers WHERE id = #{self.id};"
   end
 end
