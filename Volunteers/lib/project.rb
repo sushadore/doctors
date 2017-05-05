@@ -1,5 +1,5 @@
 class Project
-  attr_accessor(:name)
+  attr_accessor(:name, :description)
 
   def initialize(attributes)
     @name = attributes[:name]

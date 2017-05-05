@@ -13,8 +13,13 @@ describe Project do
 
   describe '#name' do
     it 'returns project name' do
-      project = (Project.new(:name => 'Horses', :description => 'feed the horses', :id => nil))
-      expect(project.name).to eq('Horses')
+      expect((Project.new(:name => 'Horses', :description => 'feed the horses', :id => nil)).name).to eq('Horses')
+    end
+  end
+
+  describe '#description' do
+    it 'returns project description' do
+      expect((Project.new(:name => 'Horses', :description => 'feed the horses', :id => nil)).description).to eq('feed the horses')
     end
   end
 end
