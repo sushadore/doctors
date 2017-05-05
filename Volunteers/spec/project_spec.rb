@@ -5,12 +5,6 @@ require 'pg'
 
 describe Project do
 
-  describe '.all' do
-    it 'starts off with no projects' do
-    expect(Project.all).to eq([])
-    end
-  end
-
   describe '#title' do
     it 'adds project title' do
       expect(Project.new(:title => 'Horses', :description => 'feed the horses', :id => nil).title).to eq('Horses')
@@ -26,6 +20,12 @@ describe Project do
   describe '#id' do
     it 'sets project ID' do
       expect(Project.new(:title => 'Horses', :description => 'feed the horses', :id => 1).id).to be_an_instance_of Fixnum
+    end
+  end
+
+  describe '.all' do
+    it 'starts off with no projects' do
+    expect(Project.all).to eq([])
     end
   end
 

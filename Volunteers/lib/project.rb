@@ -8,11 +8,8 @@ class Project
   end
 
   def Project.all
-    # return_projects = (DB.exec'SELECT * FROM projects;')
     projects = []
-# return_projects.each do |project|
     (DB.exec"SELECT * FROM projects;").each do |project|
-      title = project['title']
       projects.push(Project.new(:title => project['title'], :description => project['description'], :id => project['id'].to_i))
     end
     projects
@@ -24,6 +21,5 @@ class Project
 
   def save
     @id = (DB.exec"INSERT INTO projects (title, description) VALUES ('#{@title}', '#{@description}') RETURNING id;").first['id'].to_i
-    # @id = (DB.exec"INSERT INTO projects (title) VALUES ('#{@title}') (description) VALUES ('#{@description}' RETURNING id;").first['id'].to_i
   end
 end

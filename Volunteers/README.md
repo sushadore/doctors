@@ -1,3 +1,3 @@
 |Description|Input|Output|
-|Adds new projects|Horses|'Horses' has been added to projects|
-|Describes new project|feed the horses|description 'feed the horses' has been added to projects|
+|Adds new project including title, description & id |Horses, feed the horses, |Project parameters: title - Horses, description - feed the horses, id - 1|
+|Adds new volunteer including name & id|Sam Bob|Volunteer parameters: name - Sam Bob, id - 1|
