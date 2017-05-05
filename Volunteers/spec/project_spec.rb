@@ -11,21 +11,37 @@ describe Project do
     end
   end
 
-  describe '#name' do
-    it 'adds project name' do
-      expect((Project.new(:name => 'Horses', :description => 'feed the horses', :id => nil)).name).to eq('Horses')
+  describe '#title' do
+    it 'adds project title' do
+      expect(Project.new(:title => 'Horses', :description => 'feed the horses', :id => nil).title).to eq('Horses')
     end
   end
 
   describe '#description' do
     it 'adds project description' do
-      expect((Project.new(:name => 'Horses', :description => 'feed the horses', :id => nil)).description).to eq('feed the horses')
+      expect(Project.new(:title => 'Horses', :description => 'feed the horses', :id => nil).description).to eq('feed the horses')
     end
   end
 
   describe '#id' do
     it 'sets project ID' do
-      expect((Project.new(:name => 'Horses', :description => 'feed the horses', :id => 1)).id).to be_an_instance_of Fixnum
+      expect(Project.new(:title => 'Horses', :description => 'feed the horses', :id => 1).id).to be_an_instance_of Fixnum
     end
   end
+
+  describe '#==' do
+    it 'is the same project if it has the same title' do
+      project1 = Project.new(:title => 'Horses', :description => 'feed the horses', :id => 1)
+      project2 = Project.new(:title => 'Horses', :description => 'feed the horses', :id => 1)
+      expect(project1).to eq(project2)
+    end
+  end
+
+  # describe 'save' do
+  #   it 'lets you save projects to the database' do
+  #     project = Project.new(:title => 'Horses', :description => 'feed the horses', :id => 1)
+  #     project.save
+  #     expect(Project.all).to eq([project])
+  #   end
+  # end
 end
