@@ -27,4 +27,9 @@ class Project
     @title = attributes[:title]
     DB.exec"UPDATE projects SET title = '#{@title}' WHERE id = #{self.id};"
   end
+
+  def update_description(attributes)
+    @description = attributes[:description]
+    DB.exec"UPDATE projects SET description = '#{@title}' WHERE id = #{self.id};"
+  end
 end

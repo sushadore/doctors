@@ -53,4 +53,13 @@ describe Project do
       expect(project.title).to eq('Ponies')
     end
   end
+
+  describe '#update_description' do
+    it 'changes the project description in the database' do
+      project = Project.new(:title => 'Horses', :description => 'feed the equines', :id => nil)
+      project.save
+      project.update_description(:description => 'shoe the equines')
+      expect(project.description).to eq('shoe the equines')
+    end
+  end
 end
