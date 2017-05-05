@@ -38,7 +38,7 @@ describe Project do
   end
 
   describe 'save' do
-    it 'lets you save projects to the database' do
+    it 'adds a project the projects array' do
       project = Project.new(:title => 'Horses', :description => 'feed the horses', :id => 1)
       project.save
       expect(Project.all).to eq([project])
