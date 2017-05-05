@@ -37,11 +37,11 @@ describe Project do
     end
   end
 
-  # describe 'save' do
-  #   it 'lets you save projects to the database' do
-  #     project = Project.new(:title => 'Horses', :description => 'feed the horses', :id => 1)
-  #     project.save
-  #     expect(Project.all).to eq([project])
-  #   end
-  # end
+  describe 'save' do
+    it 'lets you save projects to the database' do
+      project = Project.new(:title => 'Horses', :description => 'feed the horses', :id => 1)
+      project.save
+      expect(Project.all).to eq([project])
+    end
+  end
 end

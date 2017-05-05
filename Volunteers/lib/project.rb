@@ -22,9 +22,8 @@ class Project
     self.title.==(another_project.title) & self.id.==(another_project.id)
   end
 
-  # def ==(another_project)
-  #   self.title==(another_project.title) & self.id==(another_project.id)
-  # end= result.first().fetch("id").to_i()
+  def save
+    @id = (DB.exec"INSERT INTO projects (title, description) VALUES ('#{@title}', '#{@description}') RETURNING id;").first['id'].to_i
     # @id = (DB.exec"INSERT INTO projects (title) VALUES ('#{@title}') (description) VALUES ('#{@description}' RETURNING id;").first['id'].to_i
-  # end
+  end
 end
