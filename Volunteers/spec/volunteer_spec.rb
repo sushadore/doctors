@@ -13,7 +13,13 @@ describe Volunteer do
 
   describe '#id' do
     it 'adds volunteer id' do
-      expect(Volunteer.new(:name => 'Sam Bob', :id=> nil).id).to eq(nil) 
+      expect(Volunteer.new(:name => 'Sam Bob', :id=> nil).id).to eq(nil)
+    end
+  end
+
+  describe '.all' do
+    it 'returns an empty array' do
+      expect(Volunteer.new(:name => 'Sam Bob', :id=> nil).all).to eq([])
     end
   end
 end
