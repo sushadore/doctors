@@ -26,4 +26,9 @@ attr_accessor(:name, :project_id, :id)
   def delete
     DB.exec"DELETE FROM volunteers WHERE id = #{self.id};"
   end
+
+  def update(attributes)
+    @name = attributes[:name]
+    DB.exec"UPDATE volunteers SET name = '#{@name}' WHERE id = #{self.id};"
+  end
 end
