@@ -8,19 +8,19 @@ describe Project do
 
   describe '#title' do
     it 'adds project title' do
-      expect(Project.new(:title => 'Horses', :description => 'feed the equines', :id => nil).title).to eq('Horses')
+      expect(Project.new(:title => 'Horses', :id => nil).title).to eq('Horses')
     end
   end
 
-  describe '#description' do
-    it 'adds project description' do
-      expect(Project.new(:title => 'Horses', :description => 'feed the equines', :id => nil).description).to eq('feed the equines')
-    end
-  end
+  # describe '#description' do
+  #   it 'adds project description' do
+  #     expect(Project.new(:title => 'Horses', :description => 'feed the equines', :id => nil).description).to eq('feed the equines')
+  #   end
+  # end
 
   describe '#id' do
     it 'sets project ID' do
-      expect(Project.new(:title => 'Horses', :description => 'feed the equines', :id => 1).id).to be_an_instance_of Fixnum
+      expect(Project.new(:title => 'Horses', :id => 1).id).to be_an_instance_of Fixnum
     end
   end
 
@@ -32,43 +32,43 @@ describe Project do
 
   describe '#==' do
     it 'is the same project if it has the same title' do
-      project1 = Project.new(:title => 'Horses', :description => 'feed the equines', :id => 1)
-      project2 = Project.new(:title => 'Horses', :description => 'feed the equines', :id => 1)
+      project1 = Project.new(:title => 'Horses', :id => 1)
+      project2 = Project.new(:title => 'Horses', :id => 1)
       expect(project1).to eq(project2)
     end
   end
 
   describe 'save' do
     it 'adds a project to the projects array' do
-      project = Project.new(:title => 'Horses', :description => 'feed the equines', :id => 1)
+      project = Project.new(:title => 'Horses', :id => 1)
       project.save
       expect(Project.all).to eq([project])
     end
   end
 
-  describe '#update_title' do
+  describe '#update' do
     it 'changes project title in the database' do
-      project = Project.new(:title => 'Horses', :description => 'feed the equines', :id => nil)
+      project = Project.new(:title => 'Horses', :id => nil)
       project.save
-      project.update_title(:title => 'Ponies')
+      project.update(:title => 'Ponies')
       expect(project.title).to eq('Ponies')
     end
   end
 
-  describe '#update_description' do
-    it 'changes the project description in the database' do
-      project = Project.new(:title => 'Horses', :description => 'feed the equines', :id => nil)
-      project.save
-      project.update_description(:description => 'shoe the equines')
-      expect(project.description).to eq('shoe the equines')
-    end
-  end
+  # describe '#update_description' do
+  #   it 'changes the project description in the database' do
+  #     project = Project.new(:title => 'Horses', :description => 'feed the equines', :id => nil)
+  #     project.save
+  #     project.update_description(:description => 'shoe the equines')
+  #     expect(project.description).to eq('shoe the equines')
+  #   end
+  # end
 
   describe '#delete' do
     it 'deletes a project from the database' do
-      project1 = Project.new(:title => 'Horses', :description => 'feed the equines', :id => nil)
+      project1 = Project.new(:title => 'Horses', :id => nil)
       project1.save
-      project2 = Project.new(:title => 'Dogs', :description => 'bathe the dogs', :id => nil)
+      project2 = Project.new(:title => 'Dogs', :id => nil)
       project2.save
       project1.delete
       expect(Project.all).to eq([project2])
