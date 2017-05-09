@@ -10,3 +10,13 @@ describe 'adding a new project', {:type => :feature} do
     fill_in('title', :with => 'Horses')
     expect(page).to have_content 'Horses'
   end
+end
+
+  describe 'adding a new volunteer', {:type => :feature} do
+    it 'allows user to add a new volunteer to the database' do
+      visit '/'
+      click_link 'Add volunteer'
+      fill_in('name', :with => 'Sam Bob')
+      expect(page).to have_content 'Sam Bob'
+    end
+  end

@@ -12,12 +12,6 @@ describe Project do
     end
   end
 
-  # describe '#description' do
-  #   it 'adds project description' do
-  #     expect(Project.new(:title => 'Horses', :description => 'feed the equines', :id => nil).description).to eq('feed the equines')
-  #   end
-  # end
-
   describe '#id' do
     it 'sets project ID' do
       expect(Project.new(:title => 'Horses', :id => 1).id).to be_an_instance_of Fixnum
@@ -55,15 +49,6 @@ describe Project do
     end
   end
 
-  # describe '#update_description' do
-  #   it 'changes the project description in the database' do
-  #     project = Project.new(:title => 'Horses', :description => 'feed the equines', :id => nil)
-  #     project.save
-  #     project.update_description(:description => 'shoe the equines')
-  #     expect(project.description).to eq('shoe the equines')
-  #   end
-  # end
-
   describe '#delete' do
     it 'deletes a project from the database' do
       project1 = Project.new(:title => 'Horses', :id => nil)
@@ -72,6 +57,16 @@ describe Project do
       project2.save
       project1.delete
       expect(Project.all).to eq([project2])
+    end
+  end
+
+  describe '.find' do
+    it 'finds a project by its id' do
+      project1 = Project.new(:title => 'Horses', :id => nil)
+      project1.save
+      project2 = Project.new(:title => 'Dogs', :id => nil)
+      project2.save
+      expect(Project.find(project2)).to eq(project2)
     end
   end
 end

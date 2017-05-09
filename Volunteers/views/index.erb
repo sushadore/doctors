@@ -1,3 +1,14 @@
-<h1>Track your projects and volunteers</h1>
-<a href="/projects">Projects</a>
-<a href="/volunteers">Volunteers</a>
+<h2>Projects:</h2>
+
+<% if @projects.any? %>
+  <ul>
+    <% @projects.each do |project| %>
+      <li><a href="/projects/<%= project.id%>"><%= project.title %></a></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Add a project!</p>
+<% end %>
+
+<a class="btn btn-default" href="/projects/new">Add a Project</a>
+<hr>

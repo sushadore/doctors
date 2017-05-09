@@ -18,6 +18,10 @@ class Project
     self.title.==(another_project.title) & self.id.==(another_project.id)
   end
 
+  # def ==(another_project)
+  #   self.title.==(another_project.title) & self.id.==(another_project.id)
+  # end
+
   def save
     @id = (DB.exec"INSERT INTO projects (title) VALUES ('#{@title}') RETURNING id;").first['id'].to_i
   end
@@ -30,4 +34,15 @@ class Project
   def delete
     DB.exec"Delete FROM projects WHERE id = #{self.id};"
   end
+
+  # define_singleton_method(:find) do |id|
+  #    found_project = nil
+  #    Project.all().each() do |project|
+  #      if project.id().==(id)
+  #        found_project = project
+  #      end
+  #    end
+  #    found_project
+  #  end
+
 end
