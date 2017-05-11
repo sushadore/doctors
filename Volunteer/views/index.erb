@@ -1,0 +1,13 @@
+<h1>Projects</h1><hr>
+<% if @projects.any? %>
+  <ul>
+    <% @projects.each do |project| %>
+      <li><h4><a href="/projects/<%= project.id%>"><%= project.title %></a><h4></li>
+    <% end %>
+  </ul>
+
+<h4>To edit or see associated volunteers, click on a project.</h4>
+<% else %>
+  <h4>There are no projects yet!</h4>
+<% end %>
+<br><a class="btn btn-default" href="/projects/new">Add a Project</a>
