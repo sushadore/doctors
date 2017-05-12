@@ -1,16 +1,14 @@
 <h2>Project: <%= @project.title %></h2>
 <hr>
-
-<% if @project.volunteers.any? %>
-<h2>Volunteers:</h2>
-
-<ul>
-  <% @volunteer.volunteers.each do |volunteer| %>
-  <li><a href="/volunteers/<%= volunteer.id%>/"><%= volunteer.volunteer %></a></li>
-  <% end %>
-</ul>
+<% if @volunteers.any? %>
+<h2>Your Fabulous Volunteers</h2>
+  <ul>
+    <% @project.volunteers.each do |volunteer| %>
+      <li><%= volunteer.volunteer_name %></a></li>
+    <% end %>
+  </ul>
 <% else %>
-<p> There are no volunterrs yet! </p>
+  <p>You need some volunteers!!</p>
 <% end %>
 <br><a class="btn btn-default" href="/volunteers/new">Add a Volunteer</a>
 
@@ -21,7 +19,6 @@
   <input type="text" name="title">
   <button class="btn btn-default" type ="submit">Change title</button>
 </form>
-
 
 <form action="/projects/<%= @project.id %>" method="post">
   <input type="hidden" name="_method" value="delete">

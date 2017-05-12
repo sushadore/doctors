@@ -1,19 +1,18 @@
 <h3>Enter a new volunteer!</h3>
-<form action ="/volunteers/new" method="post">
-  <div class="form-group">
-    <label for="name">Volunteer Name</label>
-    <input class="form-control" name="name" type="text">
+
+<form action="/volunteers" method="post">
+  <div class="form_group">
+    <label for="volunteer_name">Name:</label>
+    <input class="form-control" name="volunteer_name" type="text">
   </div>
 
-  <div class="form-group">
-    <label for="project_id">Select Project</label>
-    <select name='project_id' type='text'>
-      <% @projects.each do |project| %>
-        <option value="<%= project.id%>"> <%= project.title %></option>
-      <% end %>
-    </select>
-  </div>
+  <label for="project_id">Select a Project</label>
+  <select name="project_id" type="text">
+    <% @projects.each do |project| %>
+      <option value="<%= project.id%>"> <%= project.title %></option>
+    <% end %>
+  </select>
 
-  <button class="btn btn-default" type="submit">Add Volunteer</button>
+  <button class="btn btn-default" type="submit">Create Volunteer</button>
 </form>
 <a class="btn btn-default" href="/">Home</a>

@@ -3,6 +3,7 @@ require 'sinatra/reloader'
 require './lib/project'
 require './lib/volunteer'
 require 'pg'
+require 'pry'
 
 DB = PG.connect({:dbname => 'volunteer_tracker'})
 
@@ -24,6 +25,7 @@ end
 get '/projects/:id'  do
   @project = Project.find(params['id'].to_i)
   @volunteers = Volunteer.all
+  @projects = Project.all
   erb :project
 end
 
@@ -35,25 +37,23 @@ patch '/projects/:id' do
 end
 
 delete '/projects/:id' do
-  @project = Project.find(params['id'].to_i)
-  @project.delete
+  project = Project.find(params['id'].to_i)
+  project.delete
   redirect '/'
 end
 
 get '/volunteers/new' do
-  @project = Project.all
+  @projects = Project.all
   erb :volunteer_form
 end
 
-post '/volunteers/new' do
+post '/volunteers' do
   project_id = params['project_id'].to_i
-  volunteer = Volunteer.new(:name => params['name'], :project_id => project_id)
+  volunteer = Volunteer.new(:volunteer_name => params['volunteer_name'], :project_id => project_id)
   volunteer.save
   @project = Project.find(project_id)
-  redirect '/'
-end
-
-get '/volunteers/:id'  do
-  @volunteer = Volunteer.find(params['id'].to_i)
-  erb :volunteer
+  @volunteers = Volunteer.all
+  @projects = Project.all
+  binding.pry
+  erb :index
 end

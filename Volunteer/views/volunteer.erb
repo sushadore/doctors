@@ -1,12 +1,12 @@
-<h2>Volunteer: <%= @volunteer.name %></h2>
+<h2>Volunteer: <%= @volunteer.volunteer_name %></h2>
 <hr>
 
 <h2>Update Volunteer</h2>
 <form action ="/volunteers/<%= @volunteer.id%>" method="post">
   <input type="hidden" name="_method" value="patch">
-  <label for="name">Change Volunteer Title</label>
-  <input type="text" name="name">
-  <button class="btn btn-default" type ="submit">Change name</button>
+  <label for="volunteer_name">Change Name</label>
+  <input type="text" name="volunteer_name">
+  <button class="btn btn-default" type ="submit">Update</button>
 </form>
 
 
