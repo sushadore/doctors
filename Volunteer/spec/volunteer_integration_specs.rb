@@ -51,11 +51,11 @@ describe 'deleting a volunteer', {:type => :feature} do
   end
 end
 
-# describe 'deleting a project', {:type => :feature} do
-#   it 'allows user to delete a project' do
-#     visit '/'
-#     click_link 'Equines'
-#     click_button 'Delete Volunteer'
-#     expect(page).to have_content ''
-#   end
-# end
+describe 'deleting a project', {:type => :feature} do
+  it 'allows user to delete a project' do
+    visit '/'
+    click_link 'Equines'
+    click_button 'Delete Volunteer'
+    expect(page).to have_content ''
+  end
+end
