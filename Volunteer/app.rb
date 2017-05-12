@@ -1,4 +1,4 @@
-require 'sinatra'
+ require 'sinatra'
 require 'sinatra/reloader'
 require './lib/project'
 require './lib/volunteer'
@@ -32,7 +32,7 @@ end
 
 patch '/projects/:id' do
   @project = Project.find(params['id'].to_i)
-  @project.update({:title => params['title']})
+  @project.update(:title => params['title'])
   @volunteers = Volunteer.all
   erb :project
 end

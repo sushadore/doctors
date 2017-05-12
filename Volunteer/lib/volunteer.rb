@@ -1,5 +1,5 @@
 class Volunteer
-attr_accessor :volunteer_name, :project_id, :id
+  attr_accessor :volunteer_name, :project_id, :id
 
   def initialize (attributes)
     @volunteer_name = attributes[:volunteer_name]

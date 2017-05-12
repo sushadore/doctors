@@ -1,18 +1,22 @@
-<h3>Enter a new volunteer!</h3>
-
-<form action="/volunteers" method="post">
-  <div class="form_group">
-    <label for="volunteer_name">Name:</label>
-    <input class="form-control" name="volunteer_name" type="text">
-  </div>
-
-  <label for="project_id">Select a Project</label>
-  <select name="project_id" type="text">
-    <% @projects.each do |project| %>
-      <option value="<%= project.id%>"> <%= project.title %></option>
-    <% end %>
-  </select>
-
-  <button class="btn btn-default" type="submit">Create Volunteer</button>
-</form>
-<a class="btn btn-default" href="/">Home</a>
+<% if @projects.any? %>
+  <h3>Enter a new volunteer!</h3>
+  <form action="/volunteers" method="post">
+    <div class="form_group">
+      <label for="volunteer_name">Name:</label>
+      <input class="form-control" name="volunteer_name" type="text">
+    </div>
+    <div class="form_group">
+      <label for="project_id">Select a Project: </label>
+      <select name="project_id" type="text">
+        <% @projects.each do |project| %>
+          <option value="<%= project.id%>"> <%= project.title %></option>
+        <% end %>
+      </select>
+    </div>
+    <button class="btn btn-default" type="submit">Create Volunteer</button>
+  </form>
+<% else %>
+  <h4>You need a project in order to add a volunteer!</h4>
+  <a class="btn btn-default" href="/projects/new">Add Project</a><br>
+<% end %>
+<br><a class="btn btn-default" href="/">Home</a>
