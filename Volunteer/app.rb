@@ -54,6 +54,5 @@ post '/volunteers' do
   @project = Project.find(project_id)
   @volunteers = Volunteer.all
   @projects = Project.all
-  binding.pry
   erb :index
 end
