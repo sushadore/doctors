@@ -14,7 +14,15 @@ This program creates, updates and deletes projects and volunteers. It allows vol
 |Allows volunteer updates and deletions|Change volunteer name to Sam Joe|Sam Bob changed to Sam Joe|
 |Assigns volunteers to projects|Add Sam Joe to Horses|Horses volunteers: Sam Joe|
 
+## Requirements
+
+* ES6 compatible browser
+* Ruby
+* Postgres
+
 ## Setup
+
+
 
 
 ## License

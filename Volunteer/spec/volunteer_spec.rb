@@ -7,7 +7,6 @@ describe Volunteer do
 
   describe '#volunteer_name' do
     it 'adds volunteer name' do
-
       expect(Volunteer.new(:volunteer_name => 'Sam Bob', :project_id => 1, :id => nil).volunteer_name).to eq('Sam Bob')
     end
   end

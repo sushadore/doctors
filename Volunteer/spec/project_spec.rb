@@ -21,7 +21,7 @@ describe Project do
 
   describe '.all' do
     it 'starts off with no projects' do
-    expect(Project.all).to eq([])
+      expect(Project.all).to eq([])
     end
   end
 
