@@ -10,4 +10,18 @@
 <% else %>
   <h4>There are no projects yet!</h4>
 <% end %>
-<br><a class="btn btn-default" href="/projects/new">Add a Project</a>
+<br><a class="btn btn-default" href="/projects/new">Add Project</a>
+
+<h1>Volunteers</h1><hr>
+<% if @volunteers.any? %>
+  <ul>
+    <% @volunteers.each do |volunteer| %>
+      <li><h4><a href="/volunteers/<%= volunteer.id%>"><%= volunteer.volunteer_name %></a><h4></li>
+    <% end %>
+  </ul>
+
+<h4>Click on volunteer to edit</h4>
+<% else %>
+  <h4>There are no volunteers yet!</h4>
+<% end %>
+<br><a class="btn btn-default" href="/volunteers/new">Add Volunteer</a>
