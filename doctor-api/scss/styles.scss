@@ -1,18 +1,25 @@
+$light-blue: #A2CCDC;
+$dark-gray: #606060;
+
 body {
   background: #DDDDDD;
-  padding: 40px 0;
-  color: #606060;
+  padding: 30px 0;
+  color: $dark-gray;
   text-align: center;
 }
 .page-head {
-    position: relative;
-    background: #A2CCDC;
-    overflow: hidden;
-    h1 {
-      font-family: 'Allerta';
-        padding: 20px;
-        text-align: center;
-        font-size: 70px;
-        color: #606060;
-    }
+  position: relative;
+  background: $light-blue;
+  overflow: hidden;
+  h1 {
+    font-family: 'Allerta';
+      padding: 20px;
+      text-align: center;
+      font-size: 70px;
+  }
+}
+
+.btn {
+  background-color: $dark-gray;
+  color: #fff;
 }

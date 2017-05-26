@@ -1,49 +1,38 @@
-# <!--PROJECT NAME HERE-->
-
-This project will save the world!
+## Local Doctor Finder
+Javascript API practice using BetterDoctor
 
 ### Prerequisites
-
-Web browser with ES6 compatibility
-Examples: Chrome, Safari
-
-* npm
-* bower
-* ruby
-
-### Installing
-
-These instructions have been verified to work on MacOS.
-
-There are a few terminal commands you will need to run to get the app to launch locally on your machine. First though, you will need to clone this repository to your machine and navigate to its folder in your terminal.
-
-Once you have navigated to the correct directory, you will run the following commands:
-
-* bower install
-* npm install
-* gulp serve
-
-The required packages may take a few minutes to download and install due to the speed of your machine and your Internet connection. The last command should launch the app in your browser! That's it!
-
-## Built With
-
-* HTML
-* CSS/SASS
-* Bootstrap https://getbootstrap.com/
-* ES6
-* Jquery https://jquery.com/
-* Node
+* ES6 compatible browser such as Chrome or Safari
+* NPM
 * Bower
 
-## Authors
+### Setup
+These instructions have been verified to work on MacOS. This is an unpublished page but the following instructions generate a browser preview. Each instruction formatted `like this` should be typed verbatim or copy/pasted.
+  * Get BetterDoctor API key at https://developer.betterdoctor.com/signup
+  * Open terminal
+  * `cd desktop`
+  * `git clone https://github.com/sushadore/doctors.git`
+  * `cd doctors`
+  * `touch .env`
+  * `atom .`
+  * Add `exports.apiKey="`your BetterDoctor API key here`"` to the .env file
+  * Add `.env` to the .gitignore file
+  * `bower install`
+  * `npm install`
+  * `gulp serve`
 
-* <!--YOUR NAME HERE-->
+The required packages may take a few minutes to download and install based on individual computer and internet connection. The last command should launch the app preview in your browser.
 
-## License
+### Technologies
+HTML, CSS/SCSS, Bootstrap, ES6, Jquery, Node, Bower
 
+### Author
+Susha Dore
+
+### Legal
 MIT License
 
-Copyright (c) <!--YOUR NAME & YEAR HERE-->
+Copyright (c) 2017 Susha Dore
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

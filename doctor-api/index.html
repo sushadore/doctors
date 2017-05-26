@@ -6,27 +6,30 @@
     <script src="build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta" >
-    <title>Doctors</title>
+    <title>Doctor Finder</title>
   </head>
   <body>
-     <div class="container">
-           <div class="page-head">
-             <h1>Find a Doctor</h1>
-            </div>
-       <div class="row">
-         <div class="col-xs-8 col-xs-offset-2">
-           <div class="form-group">
-             <h5>Seach local doctors by medical condition</h5>
-             <form>
-               <input class="form-control" id="medical-condition" type="text">
-               <br>
-               <button class="btn btn-default" id="find-doctors" type="submit">Find Doctors</button>
-             </form>
-           </div>
-         </div>
+    <div class="container">
+      <div class="page-head">
+        <h1>Find-a-Doc</h1>
        </div>
-       <div id="doctors"></div>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <div class="form-group">
+            <h4>find local doctors to treat your medical condition</h4>
+            <form>
+              <input class="form-control" id="medical-condition" type="text" placeholder="Medical Condition">
+              <br>
+              <button class="btn btn-default" id="find-doctors" type="submit">Find Doctors</button>
+            </form>
+          </div>
         </div>
-     </div>
-   </body>
+      </div>
+      <div id="doctors"></div>
+      </div>
+      <div class="row">
+        <h6>powered by <a href="https://betterdoctor.com" target="_blank rel = noopener referrer">BetterDoctor</a></h6>
+      </div>
+    </div>
+  </body>
  </html>
