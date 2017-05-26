@@ -1,0 +1,23 @@
+{
+  "copyright": "Copyright (c) 2013 The New York Times Company.  All Rights Reserved.",
+  "response": {
+    "meta": {
+      "hits": 5419
+    },
+    "docs": [
+      {
+        "web_url": "http://www.nytimes.com/2016/11/02/world/americas/canada-patrick-lagace-montreal-police.html",
+        "snippet": "Investigators looking into corruption within the Montreal police force for almost six months focused their attention on a reporter who had no apparent connection to the case....",
+        "lead_paragraph": "Investigators looking into corruption within the Montreal police force for almost six months focused their attention on a reporter who had no apparent connection to the case.",
+        "abstract": "Advocates for freedom of press denounce Montreal police force for its surveillance of reporter Patrick Lagace; spying was apparently prompted by media leaks from within department about internal investigation into corruption.",
+        "print_page": "6",
+        "blog": [],
+        "source": "The New York Times",
+        "multimedia": [],
+        "headline": {
+          "main": "Montreal Police Face a Storm of Criticism Over Surveillance of a Journalist",
+          "print_headline": "Montreal Police Face a Storm of Criticism Over Surveillance of a Journalist"
+        },
+        "keywords": [
+          {
+            "rank": "1",

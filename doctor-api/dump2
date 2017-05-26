@@ -1,0 +1,19 @@
+"data": [
+    {
+      "practices": [
+        {
+          "location_slug": "or-medford",
+          "within_search_area": false,
+          "distance": 222.00529160733467,
+          "lat": 42.31727,
+          "lon": -122.8305,
+          "uid": "5dda86283f24ec1cc477c8f7ba500fb6",
+          "name": "Hilary Redden, MD",
+          "accepts_new_patients": true,
+          "insurance_uids": [
+            "firstchoice-firstchoice",
+            "providencehealthsystem-providencepreferredppo",
+            "bcbsbluecard-bcbsbluecardppo",
+            "cigna-cignappo",
+            "cigna-cignaopenaccessplus",
+            "pacificsourcehealthplans-
