@@ -11,7 +11,7 @@ These instructions have been verified to work on MacOS. This is an unpublished p
   * Get BetterDoctor API key at https://developer.betterdoctor.com/signup
   * Open terminal
   * `cd desktop`
-  * `git clone https://github.com/sushadore/doctors.git`
+  * `git clone https://github.com/sushadore/doctors/tree/master/doctor-api`
   * `cd doctors`
   * `touch .env`
   * `atom .`
